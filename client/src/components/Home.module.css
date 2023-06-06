@@ -1,0 +1,65 @@
+.home {
+    background-image: url('https://c4.wallpaperflare.com/wallpaper/901/396/862/violet-merger-blue-gradient-wallpaper-preview.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .left {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .title {
+    margin-bottom: 0;
+    font-size: 3rem;
+    font-style: italic;
+    text-align: center;
+    color: white;
+  }
+  
+  .line {
+    margin-top: 0;
+    font-size: 1.8rem;
+    text-align: center;
+    color: white;
+  }
+  
+  .right {
+    flex: 1;
+    /* border: 5px solid black; */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  a{
+    text-decoration: none;
+    color: rgb(137, 127, 127);
+    cursor: pointer;
+    font-weight: 900;
+  }
+  .getStart {
+    /* margin-left: 10%; */
+    font-family: "Arial", sans-serif; /* Replace "Arial" with your desired font family */
+    font-size: 1.8rem;
+  }
+  
+  
+  @media (max-width: 768px) {
+    .home {
+      flex-direction: column;
+    }
+  
+    .left {
+      margin-top: 10%;
+    }
+  }
+  

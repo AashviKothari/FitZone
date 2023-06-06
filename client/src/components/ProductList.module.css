@@ -1,0 +1,45 @@
+/* ProductList.module.css */
+
+.container {
+    max-width: 100%px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    background-color: rebeccapurple;
+  }
+  
+  .filterSection {
+    flex-basis: 30%;
+    margin-right: 20px;
+  }
+  
+  .filterContainer {
+    margin-bottom: 20px;
+  }
+  
+  .productList {
+    flex-basis: 70%;
+  }
+  
+  .productCard {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .productCard h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .productCard p {
+    margin-bottom: 10px;
+  }
+  
+  .productCard img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  

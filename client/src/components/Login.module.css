@@ -1,0 +1,72 @@
+.login {
+    background-image: url('https://c4.wallpaperflare.com/wallpaper/901/396/862/violet-merger-blue-gradient-wallpaper-preview.jpg');
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .main_card {
+    display: flex;
+    width: 80%;
+    background-color: rgb(20, 17, 17);
+    border-radius: 8px;
+    height: 80%;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Added shadow effect */
+  }
+  
+  .left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('https://cdn1.vectorstock.com/i/1000x1000/81/30/blockchain-gradient-icon-for-dark-theme-vector-40328130.jpg');
+    background-size: cover;
+    color: white;
+    border-radius: 8px 0 0 8px;
+
+  }
+  
+  .right {
+    flex: 1;
+    display: flex;
+    background-color: black;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    border-radius: 0px 8px 8px 0px;
+  }
+  .title{
+    color: rgb(172, 136, 203);
+    font-size: 2rem;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 80%;
+    height: 80%;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 10%;
+  }
+  
+  .inputx {
+    padding: 8px 16px;
+    font-size: 20px;
+    /* width: 75%; */
+    border-radius: 14px;
+    border: 1px solid #2c2b2b;
+  }
+  
+  .buttonx {
+    padding: 6px 12px;
+    border-radius: 14px;
+    border: none;
+    background-color: #551c67;
+    color: white;
+    font-size: 23px;
+    font-style: italic;
+    cursor: pointer;
+  }
+  

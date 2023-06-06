@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import styles from "./Register.module.css";
 import { useNavigate } from "react-router-dom";
 
 const Register = () => {
@@ -34,39 +35,44 @@ const Register = () => {
   };
 
   return (
-    <div>
-      <h2>Register</h2>
-      <form>
-        <input
-          type="text"
-          placeholder="Name"
-          name="name"
-          onChange={handleChange}
-          value={data.name}
-          required
-     
-        />
-        <input
-          type="email"
-          placeholder="Email"
-          name="email"
-          onChange={handleChange}
-          value={data.email}
-          required
-         
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          name="password"
-          onChange={handleChange}
-          value={data.password}
-          required
-        />
-        <button onClick={handleSubmit}>
-                Submit
-              </button>
-      </form>
+    <div className={styles.register}>
+      <div className={styles.main_card}>
+        <div className={styles.left}></div>
+        <div className={styles.right}>
+          
+          <form>
+          <h2 className={styles.title}>Register</h2>
+            <input
+              type="text"
+              placeholder="Name"
+              name="name"
+              onChange={handleChange}
+              value={data.name}
+              required
+              className={styles.inputx}
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              name="email"
+              onChange={handleChange}
+              value={data.email}
+              required
+              className={styles.inputx}
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              name="password"
+              onChange={handleChange}
+              value={data.password}
+              required
+              className={styles.inputx}
+            />
+            <button onClick={handleSubmit} className={styles.buttonx}>Submit</button>
+          </form>
+        </div>
+      </div>
     </div>
   );
 };
