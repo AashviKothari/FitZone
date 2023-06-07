@@ -5,8 +5,10 @@ import styles from './ProductList.module.css';
 const ProductList = () => {
   const [products, setProducts] = useState([]);
   const [priceFilter, setPriceFilter] = useState('');
+  const [categoryFilter, setCategoryFilter] = useState('');
   const [newProduct, setNewProduct] = useState({
     name: '',
+    category: '',
     price: '',
     description: '',
     image: '',
@@ -35,7 +37,10 @@ const ProductList = () => {
     if (priceFilter === 'high') {
       return product.price > 100;
     }
-    return true; // If no filter selected, show all products
+    if (categoryFilter !== '') {
+      return product.category && product.category.toLowerCase().includes(categoryFilter.toLowerCase());
+    }
+    return true; // If no filters selected, show all products
   });
 
   const handleInputChange = (e) => {
@@ -52,6 +57,7 @@ const ProductList = () => {
       setProducts([...products, response.data]);
       setNewProduct({
         name: '',
+        category: '',
         price: '',
         description: '',
         image: '',
@@ -79,12 +85,25 @@ const ProductList = () => {
             <option value="high">High</option>
           </select>
         </div>
+        <div className={styles.filterContainer}>
+          <label htmlFor="categoryFilter">Category Filter:</label>
+          <input
+            type="text"
+            id="categoryFilter"
+            value={categoryFilter}
+            onChange={(e) => setCategoryFilter(e.target.value)}
+          />
+        </div>
         {/* Add new product form */}
         <form onSubmit={handleSubmit}>
           <h3>Add New Product</h3>
           <div>
             <label htmlFor="name">Name:</label>
             <input type="text" id="name" name="name" value={newProduct.name} onChange={handleInputChange} />
+          </div>
+          <div>
+            <label htmlFor="category">Category:</label>
+            <input type="text" id="category" name="category" value={newProduct.category} onChange={handleInputChange} />
           </div>
           <div>
             <label htmlFor="price">Price:</label>
