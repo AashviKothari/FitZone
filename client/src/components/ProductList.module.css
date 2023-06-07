@@ -1,45 +1,118 @@
 /* ProductList.module.css */
 
 .container {
-    max-width: 100%px;
-    margin: 0 auto;
-    padding: 20px;
-    display: flex;
-    background-color: rebeccapurple;
-  }
+  max-width: 100%px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  background-image: url('https://c4.wallpaperflare.com/wallpaper/901/396/862/violet-merger-blue-gradient-wallpaper-preview.jpg');
+  color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
   
-  .filterSection {
-    flex-basis: 30%;
-    margin-right: 20px;
-  }
+}
+
+.filterSection {
+  flex-basis: 30%;
+  margin-right: 20px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  /* overflow-y: auto; */
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+.filterContainer {
+  margin-bottom: 20px;
+}
+
+.productList {
+  flex-basis: 60%;
   
-  .filterContainer {
-    margin-bottom: 20px;
-  }
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+.productCard {
   
-  .productList {
-    flex-basis: 70%;
-  }
-  
-  .productCard {
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .productCard h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  
-  .productCard p {
-    margin-bottom: 10px;
-  }
-  
-  .productCard img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-  }
-  
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.productCard h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.productCard p {
+  margin-bottom: 10px;
+}
+
+.productCard img {
+  max-width: 100%;
+  height: 250px;
+  margin-bottom: 10px;
+}
+
+.filterSection h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.filterSection label {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.filterSection select {
+  font-size: 16px;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.filterSection form {
+  margin-top: 20px;
+}
+
+.filterSection form h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.filterSection form div {
+  /* margin-bottom: 10px; */
+  margin-left: 28%;
+}
+
+.filterSection form label {
+  display: block;
+  font-size: 16px;
+  /* margin-bottom: 5px; */
+}
+
+.filterSection form input,
+.filterSection form textarea {
+  width: 80%;
+  font-size: 16px;
+  padding: 4px;
+  border-radius: 14px;
+}
+
+.filterSection form button {
+  font-size: 16px;
+  width: 60%;
+  margin-left: 28%;
+  padding: 8px 16px;
+  background-color: rebeccapurple;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.filterSection form button:hover {
+  background-color: purple;
+}
