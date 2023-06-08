@@ -6,13 +6,6 @@ const ProductList = () => {
   const [products, setProducts] = useState([]);
   const [priceFilter, setPriceFilter] = useState('');
   const [categoryFilter, setCategoryFilter] = useState('');
-  const [newProduct, setNewProduct] = useState({
-    name: '',
-    category: '',
-    price: '',
-    description: '',
-    image: '',
-  });
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -43,94 +36,41 @@ const ProductList = () => {
     return true; // If no filters selected, show all products
   });
 
-  const handleInputChange = (e) => {
-    setNewProduct({
-      ...newProduct,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post('http://localhost:5000/api/products', newProduct);
-      setProducts([...products, response.data]);
-      setNewProduct({
-        name: '',
-        category: '',
-        price: '',
-        description: '',
-        image: '',
-      });
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
   return (
     <div className={styles.container}>
-      <div className={styles.filterSection}>
-        <h2>Product List</h2>
-        {/* Filter component */}
-        <div className={styles.filterContainer}>
-          <label htmlFor="priceFilter">Price Filter:</label>
-          <select
-            id="priceFilter"
-            value={priceFilter}
-            onChange={(e) => setPriceFilter(e.target.value)}
-          >
-            <option value="">All</option>
-            <option value="low">Low</option>
-            <option value="medium">Medium</option>
-            <option value="high">High</option>
-          </select>
+      <div className={styles.column}>
+        <div className={`${styles.section} ${styles.section1}`}>
+          <div className={styles.head_img}>
+            <img src="https://marketplace.canva.com/EAFSUH0EweU/1/0/1600w/canva-black-elegant-personal-linkedin-banner-eEN5zzEf5VA.jpg" alt="Promotional Banner" />
+          </div>
         </div>
-        <div className={styles.filterContainer}>
-          <label htmlFor="categoryFilter">Category Filter:</label>
-          <input
-            type="text"
-            id="categoryFilter"
-            value={categoryFilter}
-            onChange={(e) => setCategoryFilter(e.target.value)}
-          />
-        </div>
-        {/* Add new product form */}
-        <form onSubmit={handleSubmit}>
-          <h3>Add New Product</h3>
-          <div>
-            <label htmlFor="name">Name:</label>
-            <input type="text" id="name" name="name" value={newProduct.name} onChange={handleInputChange} />
-          </div>
-          <div>
-            <label htmlFor="category">Category:</label>
-            <input type="text" id="category" name="category" value={newProduct.category} onChange={handleInputChange} />
-          </div>
-          <div>
-            <label htmlFor="price">Price:</label>
-            <input type="number" id="price" name="price" value={newProduct.price} onChange={handleInputChange} />
-          </div>
-          <div>
-            <label htmlFor="description">Description:</label>
-            <textarea id="description" name="description" value={newProduct.description} onChange={handleInputChange} />
-          </div>
-          <div>
-            <label htmlFor="image">Image URL:</label>
-            <input type="text" id="image" name="image" value={newProduct.image} onChange={handleInputChange} />
-          </div>
-          <button type="submit">Add Product</button>
-        </form>
       </div>
-      <div className={styles.productList}>
-        {/* Product list */}
-        {filteredProducts.map((product) => (
-          <div key={product._id} className={styles.productCard}>
-            <h3>{product.name}</h3>
-            <img src={product.image} alt={product.name} />
-            <p>Price: ${product.price}</p>
-            <p>{product.description}</p>
-            {/* Add more product details */}
+      <div className={styles.column}>
+        <div className={`${styles.section} ${styles.section2}`}>Section 2</div>
+      </div>
+      <div className={styles.column}>
+        <div className={`${styles.section} ${styles.section3}`}>
+          <div className={styles.productList}>
+            {/* Product list */}
+            {filteredProducts.map((product) => (
+              <div key={product._id} className={styles.productCard}>
+                <div className={styles.imageContainer}>
+                  <img src={product.image} alt={product.name} />
+                </div>
+                <h3>{product.name}</h3>
+                <div className={styles.detailsContainer}>
+                  <p>Price: ${product.price}</p>
+                  <p>{product.description}</p>
+                </div>
+                <div className={styles.buttonContainer}>
+                  {/* <button>-</button> */}
+                  <button className={styles.addToCartButton}>Add to Cart</button>
+                  {/* <button>+</button> */}
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     </div>
   );
