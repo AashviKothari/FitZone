@@ -41,7 +41,7 @@ const ProductList = () => {
       <div className={styles.column}>
         <div className={`${styles.section} ${styles.section1}`}>
           <div className={styles.head_img}>
-            <img src="https://marketplace.canva.com/EAFSUH0EweU/1/0/1600w/canva-black-elegant-personal-linkedin-banner-eEN5zzEf5VA.jpg" alt="Promotional Banner" />
+            
           </div>
         </div>
       </div>

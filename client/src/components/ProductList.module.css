@@ -1,14 +1,16 @@
 .container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  background-image: url('https://c4.wallpaperflare.com/wallpaper/901/396/862/violet-merger-blue-gradient-wallpaper-preview.jpg');
+  height: auto;
 }
 .head_img {
-  height: 80%;
-}
-.head_img > img {
-  width: 95%;
-  height: 100%;
+  height: 300px;
+  background: url('https://www.shutterstock.com/image-illustration/smooth-dirty-grunge-dark-purple-260nw-1435662239.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 30px;
+  margin: 0;
 }
 
 .column {
@@ -25,7 +27,7 @@
 
 .section1 {
   flex: 1;
-  background-color: #3f51b5;
+  background-color: transparent;
 }
 
 .section2 {
@@ -35,19 +37,20 @@
 
 .section3 {
   flex: 4;
-  background-color: #f44336;
+  background-color: transparent;
 }
 
 .productList {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(250px, 1fr));
-  grid-gap: 20px;
+  display:flex;
+flex-wrap: wrap; 
+ grid-gap: 20px;
   padding: 0;
   justify-content: space-between;
 }
 
 .productCard {
-  background-color: #f5f5f5;
+  flex-basis: 270px;
+  background-color: #7b777759;
   border-radius: 10px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -57,9 +60,9 @@
 }
 
 .productCard img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
+  width:100%;
+      height: 300px;
+      object-fit: cover;
   border-radius: 10px;
   margin-bottom: 10px;
 }
