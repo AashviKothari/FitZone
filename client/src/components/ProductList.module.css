@@ -32,7 +32,42 @@
 
 .section2 {
   flex: 1;
-  background-color: #009688;
+  background-color: transparent;
+}
+
+.option{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.price_filter{
+  /* margin-left: 8%; */
+}
+.selectOne {
+  border-radius: 27px;
+  font-size: 1.2rem;
+  text-align: center;
+  background-color: rgba(181, 43, 197, 0.632);
+  border: none;
+  padding: 9px;
+}
+
+.category_filter{
+  margin-left: 6%;
+}
+
+.categoryOne{
+  border-radius: 27px;
+  font-size: 1.2rem;
+  text-align: center;
+  background-color: rgba(181, 43, 197, 0.632);
+  border: none;
+  padding: 9px;
+}
+
+.categoryOne::selection{
+  border: none;
 }
 
 .section3 {
@@ -45,7 +80,7 @@
 flex-wrap: wrap; 
  grid-gap: 20px;
   padding: 0;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 
 .productCard {

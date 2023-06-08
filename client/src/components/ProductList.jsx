@@ -46,7 +46,30 @@ const ProductList = () => {
         </div>
       </div>
       <div className={styles.column}>
-        <div className={`${styles.section} ${styles.section2}`}>Section 2</div>
+        <div className={`${styles.section} ${styles.section2}`}>
+          <div className={styles.option}>
+          <div className={styles.price_filter}>
+        
+        <select className={styles.selectOne} id="priceFilter" value={priceFilter} onChange={(e) => setPriceFilter(e.target.value)}>
+          <option value="">Budget: All</option>
+          <option value="low"> Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+      </div>
+
+      <div className={styles.category_filter}>
+      <input
+      className={styles.categoryOne}
+            type="text"
+            id="categoryFilter"
+            placeholder='Category Name'
+            value={categoryFilter}
+            onChange={(e) => setCategoryFilter(e.target.value)}
+          />
+      </div>
+          </div>
+        </div>
       </div>
       <div className={styles.column}>
         <div className={`${styles.section} ${styles.section3}`}>
