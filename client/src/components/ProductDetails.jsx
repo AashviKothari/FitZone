@@ -28,6 +28,7 @@ const ProductDetails = () => {
       <h2>{product.name}</h2>
       <p>Price: ${product.price}</p>
       <p>{product.description}</p>
+      {/* <l> */}
       <img src={product.image} alt={product.name} />
       {/* Add a button to add the product to the cart */}
     </div>
