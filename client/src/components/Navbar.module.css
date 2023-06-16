@@ -1,0 +1,32 @@
+nav{
+    display :flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #292626;
+    padding: 20px 80px;
+    height : 50px;
+}
+
+.logo {
+    width: 120px; 
+    height: 100px;
+}
+
+.navbar_links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar_links li {
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+}
+
+.navbar_links li a {
+    text-decoration: none;
+    font-size: 2.0 rem;
+    font-weight: 600;
+    color: #fff;
+}
