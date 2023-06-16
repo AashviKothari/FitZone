@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styles from './ProductList.module.css';
+import Navbar from './Navbar';
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
@@ -38,6 +39,7 @@ const ProductList = () => {
 
   return (
     <div className={styles.container}>
+      <Navbar />
       <div className={styles.column}>
         <div className={`${styles.section} ${styles.section1}`}>
           <div className={styles.head_img}>
