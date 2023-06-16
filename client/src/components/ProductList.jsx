@@ -51,7 +51,7 @@ const ProductList = () => {
           <div className={styles.price_filter}>
         
         <select className={styles.selectOne} id="priceFilter" value={priceFilter} onChange={(e) => setPriceFilter(e.target.value)}>
-          <option value="">Budget: All</option>
+          <option value="">Budget: Everything</option>
           <option value="low"> Low</option>
           <option value="medium">Medium</option>
           <option value="high"> High</option>
