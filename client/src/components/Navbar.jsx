@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/logo.png";
+import logo from "../assets/fit.png";
 import {RiShoppingCartLine, RiHome2Line, RiLogoutBoxRLine} from "react-icons/ri"
 import styles from "./Navbar.module.css";
 

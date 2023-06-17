@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import styles from './ProductList.module.css';
-import Navbar from './Navbar';
-
+import React from 'react'
+import Draggable from 'react-draggable';
+import Slider from 'react-slider';
+import styles from './ProductList.module.css'
+import axios from 'axios'
+import Navbar from './Navbar.jsx'
+import { useEffect, useState } from 'react';
 const ProductList = () => {
   const [products, setProducts] = useState([]);
   const [priceFilter, setPriceFilter] = useState('');
@@ -36,46 +38,52 @@ const ProductList = () => {
     }
     return true; // If no filters selected, show all products
   });
-
+  const handleSliderChange = (value) => {
+    // Handle slider value change
+    // You can update the state or perform any other logic based on the slider value
+  };
+  
   return (
     <div className={styles.container}>
-      <Navbar />
-      <div className={styles.column}>
-        <div className={`${styles.section} ${styles.section1}`}>
-          <div className={styles.head_img}>
-            
+    <Navbar/>
+    <div className={styles.contain_divide}>
+    <div className={styles.left}>
+      <div className={styles.left_card}>
+        <div className={styles.Pro_Cat}>
+          <div className={styles.pr_ca_heading}>
+            <h2>Product Category</h2>
           </div>
-        </div>
-      </div>
-      <div className={styles.column}>
-        <div className={`${styles.section} ${styles.section2}`}>
-          <div className={styles.option}>
-          <div className={styles.price_filter}>
-        
-        <select className={styles.selectOne} id="priceFilter" value={priceFilter} onChange={(e) => setPriceFilter(e.target.value)}>
-          <option value="">Budget: All</option>
-          <option value="low"> Low</option>
-          <option value="medium">Medium</option>
-          <option value="high"> High</option>
-        </select>
-      </div>
 
-      <div className={styles.category_filter}>
-      <input
-      className={styles.categoryOne}
-            type="text"
-            id="categoryFilter"
-            placeholder='Category Name'
-            value={categoryFilter}
-            onChange={(e) => setCategoryFilter(e.target.value)}
-          />
-      </div>
-          </div>
+          <div className={styles.checkbox_group}>
+                <label>
+                  <input type="checkbox" value="Option 1" /> Option 1
+                </label>
+                <label>
+                  <input type="checkbox" value="Option 2" /> Option 2
+                </label>
+                <label>
+                  <input type="checkbox" value="Option 3" /> Option 3
+                </label>
+                <label>
+                  <input type="checkbox" value="Option 4" /> Option 4
+                </label>
+              </div>
+
+        </div>
+
+        <div className={styles.Fil_Price}>
+        <div className={styles.filter_head}>
+          <h2>Filter By Price</h2>
+        </div>
+        
         </div>
       </div>
-      <div className={styles.column}>
-        <div className={`${styles.section} ${styles.section3}`}>
-          <div className={styles.productList}>
+    </div>
+    <div className={styles.right}>
+      <div className={styles.right_card}>
+        <div className={styles.pro_container}>
+          
+        <div className={styles.productList}>
             {/* Product list */}
             {filteredProducts.map((product) => (
               <div key={product._id} className={styles.productCard}>
@@ -95,10 +103,13 @@ const ProductList = () => {
               </div>
             ))}
           </div>
+  
         </div>
-      </div>
+      </div>    
     </div>
-  );
-};
+    </div>
+    </div>
+  )
+}
 
-export default ProductList;
+export default ProductList
